@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour {
     }
 
     void Update() {
-        enemyRB.AddForce(speedEnemy * (player.transform.position - transform.position).normalized);
+        Vector3 lookDirection = (player.transform.position - transform.position).normalized;
+        enemyRB.AddForce(speedEnemy * lookDirection);
     }
 }
