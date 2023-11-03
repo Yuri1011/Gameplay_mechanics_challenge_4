@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RotateCamera : MonoBehaviour {
-    private float speedRotate = 20.0f;
+    private float speedRotate = 50.0f;
 
     void Start() {
     }
