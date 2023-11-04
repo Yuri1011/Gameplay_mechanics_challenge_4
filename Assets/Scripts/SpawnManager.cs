@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour {
     public GameObject spawnEnemyPrefab;
     private float spawnRange = 9.0f;
     void Start() {
-        SpawnEnemyWave();
+        SpawnEnemyWave(2);
     }
 
     private Vector3 GenerateRandomSpawnPosition() {
@@ -16,8 +16,8 @@ public class SpawnManager : MonoBehaviour {
         return randomPos;
     }
 
-    void SpawnEnemyWave() {
-        for (int i = 0; i < 3; i++) {
+    void SpawnEnemyWave(int enemiesToSpawn) {
+        for (int i = 0; i < enemiesToSpawn; i++) {
             Instantiate(spawnEnemyPrefab, GenerateRandomSpawnPosition(), spawnEnemyPrefab.transform.rotation);
         }
     }
