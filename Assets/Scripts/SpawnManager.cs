@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour {
     public GameObject spawnEnemyPrefab;
     private float spawnRange = 9.0f;
+    private int enemyCount;
     void Start() {
         SpawnEnemyWave(2);
     }
@@ -22,6 +23,10 @@ public class SpawnManager : MonoBehaviour {
         }
     }
     void Update() {
-        
+        enemyCount = FindObjectsOfType<Enemy>().Length;
+
+        if (enemyCount == 0) {
+            SpawnEnemyWave(1);
+        }
     }
 }
